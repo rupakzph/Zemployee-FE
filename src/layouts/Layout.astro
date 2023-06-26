@@ -1,0 +1,35 @@
+---
+import Navbar from '../components/Navbar.jsx';
+---
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Zemployee</title>
+        <link rel="icon" href="images/logo.svg" type="image/x-icon" />
+    </head>
+    <body>
+        <Navbar client:only />
+        <slot />
+    </body>
+</html>
+
+<style>
+    :root {
+        --global-font-family: Inter, sans-serif;
+        --global-font-size: 72px;
+        --global-text-color: #000000;
+        --global-color-primary: #bbe1fa;
+        --global-color-primary2: #3282b8;
+        --global-color-primary3: #0f4c75;
+        --global-color-primary4: #1b262c;
+    }
+
+    body {
+        font-family: var(--global-font-family);
+        color: var(--global-text-color);
+        padding: 0 5%;
+    }
+</style>

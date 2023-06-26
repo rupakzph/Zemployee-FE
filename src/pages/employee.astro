@@ -1,0 +1,60 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Search from '../components/Search.jsx';
+---
+
+<Layout>
+    <div class="employee-init">
+        <Search client:only="react" />
+        <a href="/">
+            <img src="images/Vector.svg" alt="icon" class="vector-icon" />
+        </a>
+    </div>
+</Layout>
+
+<style>
+    .vector-icon {
+        background: var(--global-color-primary3);
+        padding: 5px 8px;
+        border-radius: 8px;
+        position: absolute;
+        top: 25%;
+        left: 6.5%;
+    }
+
+    .employee-init {
+        display: grid;
+    }
+
+    @media only screen and (max-width: 800px) {
+        .vector-icon {
+            background: var(--global-color-primary3);
+            padding: 5px 8px;
+            border-radius: 8px;
+            position: absolute;
+            top: 12%;
+            left: 8.5%;
+        }
+    }
+</style>
+
+<script>
+    import axios from 'axios';
+
+    const res = await axios.get(`${import.meta.env.PUBLIC_API}department.json`);
+    const department = res.data;
+
+    const employeeRes = await axios.get(
+        `${import.meta.env.PUBLIC_API}employee/ListAll`
+    );
+    const employee = employeeRes.data;
+
+    const teamleadRes = await axios.get(
+        `${import.meta.env.PUBLIC_API}teamLead/ListAll`
+    );
+    const teamlead = teamleadRes.data;
+
+    localStorage.setItem('department', JSON.stringify(department));
+    localStorage.setItem('employee', JSON.stringify(employee));
+    localStorage.setItem('teamlead', JSON.stringify(teamlead));
+</script>

@@ -1,0 +1,149 @@
+.container {
+  max-width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.navbar {
+  height: 60px;
+  position: relative;
+}
+
+.user-state-btn {
+  display: none;
+}
+
+.menu-icon {
+  display: none;
+}
+.nav-elements {
+  margin-right: 20px;
+}
+.nav-elements ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style-type: none;
+}
+.userprofile {
+  height: 35px;
+  width: 35px;
+  border-radius: 0px;
+  padding-right: 10px;
+}
+
+.nav-elements ul li:not(:last-child) {
+  margin-right: 60px;
+}
+
+.nav-elements ul a {
+  color: #1b262c;
+  display: flex;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.active {
+  text-decoration: underline solid 2px;
+  text-underline-offset: 8px;
+}
+
+@media (max-width: 768px) {
+  .nav-elements ul li:not(:last-child) {
+    margin-right: 30px;
+  }
+}
+
+@media (max-width: 800px) {
+  .userprofile {
+    display: flex;
+    margin-right: 20px;
+    height: 65px;
+    width: 65px;
+    border-radius: 0px;
+  }
+  .user-state-btn {
+    display: flex;
+    gap: 30px;
+    margin-top: 15px;
+  }
+  .userprofile-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .login {
+    width: 99.56px;
+    height: 40px;
+
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    /* identical to box height */
+
+    letter-spacing: 0.1em;
+
+    color: #ffffff;
+    background: #3282b8;
+    border-radius: 10px;
+    border: 2px solid #3282b8;
+  }
+  .logout {
+    box-sizing: border-box;
+    width: 112px;
+    height: 40px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    /* identical to box height */
+
+    letter-spacing: 0.1em;
+    color: #3282b8;
+    /* Primary 2 */
+
+    border: 2px solid #3282b8;
+    border-radius: 10px;
+  }
+
+  .menu-icon {
+    display: block;
+    cursor: pointer;
+  }
+  .nav-elements {
+    margin-right: 0;
+  }
+  .nav-elements {
+    position: absolute;
+    right: 0;
+    top: 60px;
+    background-color: white;
+    z-index: 20;
+    width: 0;
+    height: calc(100vh - 60px);
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+  }
+
+  .nav-elements.active {
+    width: 100%;
+  }
+  .active {
+    text-decoration: none;
+  }
+
+  .nav-elements ul {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: start;
+    align-items: center;
+  }
+
+  .nav-elements ul li {
+    margin-right: unset;
+    margin-top: 22px;
+  }
+}
