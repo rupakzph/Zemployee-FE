@@ -13,11 +13,11 @@ const Navbar = () => {
       <div className="container">
         <a href="/">
           <div className="logo">
-            <img src="images/logo.svg" alt="Logo" className="logo" />
+            <img src="/images/logo.svg" alt="Logo" className="logo" />
           </div>
         </a>
         <div className="menu-icon" onClick={handleShowNavbar}>
-          <img src="images/hamburger.svg" alt="Logo" className="logo" />
+          <img src="/images/hamburger.svg" alt="Logo" className="logo" />
         </div>
         <div className={`nav-elements  ${showNavbar && 'active'}`}>
           <ul>
@@ -30,7 +30,7 @@ const Navbar = () => {
             <li className="user-state">
               <a href="" className="userprofile-link">
                 <img
-                  src="images/userprofile.svg"
+                  src="/images/userprofile.svg"
                   alt="Logo"
                   className="userprofile"
                 />

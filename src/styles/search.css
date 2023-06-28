@@ -29,6 +29,10 @@
   gap: 0 15%;
 }
 
+.emp-detail-wrapper {
+  text-decoration: none;
+}
+
 .emp-detail {
   background: var(--global-color-primary3);
   font-style: normal;
@@ -158,11 +162,29 @@
   justify-content: space-between;
 }
 
+.emp-profile-department {
+  display: flex;
+  width: auto;
+  height: fit-content;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.emp-department-name {
+  position: relative;
+  bottom: 80px;
+  font-size: 16px;
+  padding: 0 14px;
+  letter-spacing: 1px;
+  border-radius: 5px;
+  background: #3282b8;
+}
+
 .circular--portrait {
   position: relative;
   bottom: 85px;
-  width: 180px;
-  height: 180px;
+  width: 150px;
+  height: 150px;
   overflow: hidden;
   background-color: white;
   border-radius: 50%;

@@ -12,13 +12,6 @@ export const Search = () => {
   const empData = localStorage.getItem('employee');
   const empResult = JSON.parse(empData);
 
-  const teamLeadData = localStorage.getItem('teamlead');
-  const teamLeadResult = JSON.parse(teamLeadData);
-
-  const handleItemClick = (param) => {
-    setEmployee(param);
-  };
-
   useEffect(() => {
     const fetchData = async () => {
       if (!employee && !department) {
@@ -66,99 +59,25 @@ export const Search = () => {
 
       {/* user detail */}
       {jsonData.map((item) => (
-        <div className="emp-detail" key={item.id}>
-          <div className="emp-info">
-            <div>
-              <h1 className="emp-info-name">
-                {item.firstName} {item.lastName}
-              </h1>
-              <p className="emp-info-post">{item.designation}</p>
-            </div>
-            <div class="circular--portrait">
-              <img src={item.imageUrl || '/images/userprofile.svg'} />
-            </div>
-          </div>
-
-          <div className="employee-wrapper">
-            <div className="employee-flex">
+        <a href={`employee/${item.firstName}`} className='emp-detail-wrapper'>
+          <div className="emp-detail" key={item.id}>
+            <div className="emp-info">
               <div>
-                <h2 className="employee-flex-heading">Emplopyee Details</h2>
-                <div className="employee-flex-detail">
-                  <p className="employee-flex-gender">Gender: {item.gender}</p>
-                  <p className="employee-flex-dob">Date of birth: 08/03/2002</p>
-                  <p className="employee-flex-country">
-                    Nationality: {item.nationality}
-                  </p>
-                </div>
+                <h1 className="emp-info-name">
+                  {item.firstName} {item.lastName}
+                </h1>
+                <p className="emp-info-post">{item.designation}</p>
               </div>
-
-              <div>
-                <h2 className="employee-flex-cheading">Contact Details</h2>
-                <div className="employee-flex-detail">
-                  <p className="employee-flex-number">
-                    Phone number: {item.phoneNumber}
-                  </p>
-                  <p className="employee-flex-email">
-                    Email address: {item.email}
-                  </p>
-                  <p className="employee-flex-address">
-                    Permanent address: {item.address}
-                  </p>
+              <div className="emp-profile-department">
+                <div class="circular--portrait">
+                  <img src={item.imageUrl || '/images/userprofile.svg'} />
                 </div>
-              </div>
-            </div>
-
-            {/* subordinate detail */}
-            <div className="sub-employee">
-              {item.subordinate.length > 0 && (
-                <h2 className="sub-employee-heading">Subordinate</h2>
-              )}
-              <div className="sub-employee-grid">
-                {item.subordinate.map((subordinate) => (
-                  <div
-                    key={subordinate.id}
-                    className="sub-employee-item"
-                    onClick={() => handleItemClick(subordinate.firstName)}
-                  >
-                    <img
-                      src={subordinate.featuredImageUrl}
-                      alt="background"
-                      className="emp-img"
-                    />
-                    <div className="sub-employee-item-detail">
-                      <h2 className="sub-employee-item-detail-name">
-                        {subordinate.firstName} {subordinate.lastName}
-                      </h2>
-                      <p className="sub-employee-item-detail-post">
-                        {subordinate.designation}
-                      </p>
-                    </div>
-                  </div>
-                ))}
+                <p className="emp-department-name">{item.department}</p>
               </div>
             </div>
           </div>
-        </div>
+        </a>
       ))}
-
-      {/* teamlead detail */}
-      <div className="team-lead-container">
-        {teamLeadResult.map((item) => (
-          <a
-            className="team-lead"
-            key={item.id}
-            onClick={() => handleItemClick(item.teamlead)}
-          >
-            <img className="team-lead-img" src={item.imageUrl} alt="" />
-            <div className="team-lead-des">
-              <h1>{item.teamlead}</h1>
-              <p>
-                {item.team}, {item.designation}
-              </p>
-            </div>
-          </a>
-        ))}
-      </div>
     </>
   );
 };
