@@ -124,7 +124,10 @@ export const Search = (props) => {
                     onClick={() => handleItemClick(subordinate.firstName)}
                   >
                     <img
-                      src={subordinate.featuredImageUrl}
+                      src={
+                        subordinate.featuredImageUrl ||
+                        '/images/userprofile.svg'
+                      }
                       alt="background"
                       className="emp-img"
                     />

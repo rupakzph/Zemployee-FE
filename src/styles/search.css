@@ -182,7 +182,7 @@
 
 .circular--portrait {
   position: relative;
-  bottom: 85px;
+  bottom: 100px;
   width: 150px;
   height: 150px;
   overflow: hidden;
@@ -236,6 +236,7 @@
     border-radius: 10px;
   }
 
+
   .emp-detail {
     position: relative;
     width: auto;
@@ -248,6 +249,11 @@
     justify-content: center;
     align-items: center;
     height: 200px;
+  }
+
+  .emp-name-designation{
+    position: relative;
+    bottom: 70px;
   }
 
   .circular--portrait {

@@ -14,10 +14,10 @@ export const Search = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      if (!employee && !department) {
-        setJsonData([]); // No inputs, set empty array
-        return;
-      }
+      // if (!employee && !department) {
+      //   setJsonData([]); // No inputs, set empty array
+      //   return;
+      // }
 
       const filteredData = empResult.filter(
         (obj) =>
@@ -62,7 +62,7 @@ export const Search = () => {
         <a href={`employee/${item.firstName}`} className='emp-detail-wrapper'>
           <div className="emp-detail" key={item.id}>
             <div className="emp-info">
-              <div>
+              <div className='emp-name-designation'>
                 <h1 className="emp-info-name">
                   {item.firstName} {item.lastName}
                 </h1>
