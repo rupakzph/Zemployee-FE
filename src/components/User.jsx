@@ -75,7 +75,7 @@ export const Search = (props) => {
               <p className="emp-info-post">{item.designation}</p>
             </div>
             <div className="emp-profile-department">
-              <div class="circular--portrait">
+              <div className="circular--portrait">
                 <img src={item.imageUrl || '/images/userprofile.svg'} />
               </div>
               <p className="emp-department-name">{item.department}</p>
