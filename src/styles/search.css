@@ -217,14 +217,24 @@
     margin-top: 20px;
     border-radius: 10px;
   }
+
+  .emp-department-name {
+    position: relative;
+    bottom: 80px;
+    font-size: 16px;
+    padding: 0 14px;
+    letter-spacing: 1px;
+    border-radius: 5px;
+    background: #3282b8;
+  }
+
   .search {
     background: var(--global-color-primary3);
     width: auto;
-    height: 224px;
+    height: 170px;
     margin-top: 90px;
   }
   .employee {
-    position: relative;
     height: 40px;
     background: #f0f0f0;
     border-radius: 10px;
@@ -386,4 +396,51 @@
     margin-top: 90px;
     padding-bottom: 50px;
   }
+}
+
+@media only screen and (max-width: 650px) {
+  .emp-detail {
+    position: relative;
+    width: auto;
+    height: fit-content;
+    margin-top: 17%;
+  }
+
+  .emp-department-name {
+    position: relative;
+    bottom: 80px;
+    font-size: 16px;
+    padding: 0 14px;
+    letter-spacing: 1px;
+    border-radius: 5px;
+    background: #3282b8;
+  }
+
+  .search {
+    background: var(--global-color-primary3);
+    width: auto;
+    height: 170px;
+    margin-top: 90px;
+  }
+  .department {
+    width: 300px;
+    height: 35px;
+    border-radius: 10px;
+    padding: 0px 10px;
+    margin-left: 2%;
+  }
+  .employee {
+    width: 280px;
+    height: 35px;
+    border-radius: 10px;
+    padding: 0px 10px;
+    margin-left: 2%;
+  }
+
+  /* .search-form{
+    display: grid;
+    width: 300px;
+    justify-content: center;
+    align-items: center;
+  } */
 }

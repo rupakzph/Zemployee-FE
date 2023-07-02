@@ -66,8 +66,8 @@ export const Search = (props) => {
 
       {/* user detail */}
       {jsonData.map((item) => (
-        <div className="emp-detail-wrapper">
-          <div className="emp-detail" key={item.id}>
+        <div className="emp-detail-wrapper" key={item.id}>
+          <div className="emp-detail">
             <div className="emp-info">
               <div className="emp-name-designation">
                 <h1 className="emp-info-name">

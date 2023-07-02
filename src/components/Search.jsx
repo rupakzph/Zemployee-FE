@@ -59,10 +59,14 @@ export const Search = () => {
 
       {/* user detail */}
       {jsonData.map((item) => (
-        <a href={`employee/${item.firstName}`} className='emp-detail-wrapper'>
-          <div className="emp-detail" key={item.id}>
+        <a
+          href={`employee/${item.firstName}`}
+          className="emp-detail-wrapper"
+          key={item.id}
+        >
+          <div className="emp-detail">
             <div className="emp-info">
-              <div className='emp-name-designation'>
+              <div className="emp-name-designation">
                 <h1 className="emp-info-name">
                   {item.firstName} {item.lastName}
                 </h1>
